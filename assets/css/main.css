@@ -1,4 +1,36 @@
-html{
+html, body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    background-image: url(/assets/images/backgorund.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position-y: 10vh;
+}
+
+.conteiner{
+    position: inherit;
+
+    margin-top: 50px;
+    width: 100vw;
+    background-color: rgb(11, 24, 20);
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+}
+
+.itemPanel{
+    min-width: 200px;
+    max-width: 500px;
+    flex: 1;
+    margin: 10px;
+    background-color: brown;
+}
+
+/* html{
     color: rgb(241, 252, 255);
     background-attachment: fixed;
     background-image: linear-gradient(rgb(58, 65, 168), rgb(14, 12, 26));
@@ -46,7 +78,7 @@ footer a:hover,.footer a:focus{
     border: 3px solid rgb(0, 9, 128);
     padding: 10px;
     background-color: #2b2d2f;
-}
+} */
 
 [data-animation]{
     opacity: 5%;

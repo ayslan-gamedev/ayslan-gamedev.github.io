@@ -1,0 +1,54 @@
+.topBar{
+    width: 100vw;
+    height: var(--height);
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    overflow: hidden;
+    transition: .1s;
+
+    background-color: aqua;
+}
+
+:root{
+    --height: 10vh;
+    --opacity: 0%;
+    --menuTransform: translate3d(0px, +250px,0px);
+}
+
+.animeMenu{
+    --height: 100vh;
+    --opacity: 100%;
+    --menuTransform: translate3d(0px, 0px,0px);
+}
+
+.animeBar{
+    opacity: 0%;
+    transform: translate3d(0px, -50px,0px);
+}
+
+.menuOption{
+    opacity: var(--opacity);
+    transform: var(--menuTransform);
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    text-align: center;
+
+    overflow: hidden;
+    transition: .25s;
+
+    background-color: red;
+}
+
+.barIntens{
+    height: 10%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
