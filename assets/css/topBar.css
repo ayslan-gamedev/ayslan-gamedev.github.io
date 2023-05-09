@@ -42,7 +42,7 @@
     overflow: hidden;
     transition: .25s;
 
-    background-color: red;
+    background-color: rgb(37, 34, 170);
 }
 
 .barIntens{

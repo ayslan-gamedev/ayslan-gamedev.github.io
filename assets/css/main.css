@@ -9,6 +9,7 @@ html, body{
     background-position-y: 10vh;
 }
 
+/* panels */
 .conteiner{
     position: inherit;
     display: flex;
@@ -27,6 +28,7 @@ html, body{
     background-color: brown;
 }
 
+/* web midias */
 .webMidias{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -41,6 +43,7 @@ html, body{
     justify-content: space-around; 
 }
 
+/* footer */
 footer{
     color:#fff;
     margin:0.5rem;
@@ -55,22 +58,4 @@ footer a{
 footer a:hover,.footer a:focus{
     background:#2b2d2f;
     color:#fff
-}
-
-[data-animation]{
-    opacity: 5%;
-    transition: 1.25s;
-}
-
-[data-animation="left"]{
-    transform: translate3d(-50px,0,0);
-}
-
-[data-animation="right"]{
-    transform: translate3d(75px,0,0);
-}
-
-[data-animation].animate {
-    opacity: 1;
-    transform: translate3d(0px,0,0);
 }
