@@ -20,7 +20,7 @@ html, body{
 }
 
 .itemPanel{
-    min-width: 200px;
+    min-width: 300px;
     max-width: 500px;
 
     flex: 1;

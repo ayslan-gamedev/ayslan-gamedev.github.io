@@ -46,8 +46,11 @@
 }
 
 .barIntens{
+    min-width: 300px;
+    max-width: 500px;
+
     height: 10%;
-    
+    justify-content: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
