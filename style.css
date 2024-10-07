@@ -90,6 +90,11 @@ img {
   gap: 25px;
 }
 
+.session_about img {
+  height: 80vh;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .session_about {
     flex-direction: column;
