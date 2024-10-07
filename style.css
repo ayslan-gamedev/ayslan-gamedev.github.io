@@ -78,6 +78,16 @@ img {
   text-align: center;
 }
 
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel img {
+  position: relative;
+  transform: translateX(100%);
+}
+
 .session_about {
   display: flex;
   flex-direction: row;
