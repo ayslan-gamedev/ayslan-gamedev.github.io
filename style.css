@@ -80,6 +80,7 @@ img {
 
 .session_projects {
   height: 120vh;
+  /*width: 100vw;*/
 }
 
 .carousel {
@@ -87,6 +88,8 @@ img {
   flex-direction: column;
   position: relative;
   align-items: center;
+  height: 80vh;
+  width: auto;
 }
 
 .images,
@@ -100,16 +103,63 @@ img {
   position: relative;
   transition: transform 0.5s ease-in-out;
   transform: translateX(100%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  /* Ajusta a imagem sem distorção */
 }
 
 .images .inputs {
   position: absolute;
-  bottom: 0;
+  bottom: -10%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {}
+.inputs input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.inputs input[type="radio"]:checked {
+  border-color: black;
+  background-color: black;
+  transition: .5s;
+}
+
+/**/
+/*.inputs input[type="radio"]:checked::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  width: 20px;*/
+/*  height: 20px;*/
+/*  background-color: black;*/
+/*  border-radius: 50%;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  transition: background-color 0.3s;*/
+/*}*/
+
+
+@media (max-width: 768px) {
+  .session_projects {
+    width: 100vw;
+  }
+
+  .imgs img {
+    width: 100vw;
+    height: 100vh;
+  }
+}
 
 .session_about {
   display: flex;
