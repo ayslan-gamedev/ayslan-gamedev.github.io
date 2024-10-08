@@ -78,15 +78,38 @@ img {
   text-align: center;
 }
 
-.carousel {
-  display: flex;
-  justify-content: center;
+.session_projects {
+  height: 120vh;
 }
 
-.carousel img {
+.carousel {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  align-items: center;
+}
+
+.images,
+.imgs {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.imgs img {
+  position: relative;
+  transition: transform 0.5s ease-in-out;
   transform: translateX(100%);
 }
+
+.images .inputs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {}
 
 .session_about {
   display: flex;
