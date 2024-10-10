@@ -1,7 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/nerd-fonts/2.1.0/JetBrainsMono/JetBrainsMono.css");
 
 :root {
-  --primary-color: #fffffff;
+  --primary-color: #ffffff;
   --secundary-color: #ffffff;
   --background-color: white;
   /*--background-color: #353535;*/
@@ -32,7 +32,6 @@ body {
 
 body {
   display: flex;
-  /*flex-wrap: unset;*/
   flex-direction: column;
   background-color: var(--background-color);
   font-family: "JetBrains Mono", monospace;
@@ -75,7 +74,7 @@ body {
     width: 80vw;
     height: 90vh;
     object-fit: cover;
-    transform: translateX(100%);
+    /*transform: translateX(200%);*/
     transition: .2s;
   }
 

@@ -1,25 +1,143 @@
-const inputs = document.querySelectorAll('.inputs input');
-let currentIndex = 0;
-const totalSlides = inputs.length;
+const inputs = document.querySelectorAll('.carousel .inputs input');
+const imgs = document.querySelectorAll('.carousel .slides img');
+let curr_img = 0;
 
-function changeSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  inputs[currentIndex].checked = true;
+// start position = (images count - i) * 50
+let start_pos = (imgs.length - 1) * 50
 
-  const imagesContainer = document.querySelector('.imgs');
-  imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+function move_slide(position) {
+  imgs.forEach(img => {
+    if (position != null) {
+      img.style.transform = `translateX(${position}%)`;
+    }
+    else {
+      //new position = start position - (current image index * 100)
+      img.style.transform = `translateX(${start_pos - (curr_img * 100)}%)`;
+      console.log("aaaaa")
+    }
+    console.log(position);
+  })
 }
 
+// pass by inputs
 inputs.forEach((input, index) => {
   input.addEventListener('change', () => {
-    currentIndex = index;
-    const imagesContainer = document.querySelector('.imgs');
-    imagesContainer.style.transform = `translateX(-${index * 100}%)`;
-  });
+    curr_img = index;
+    move_slide();
+  })
 });
 
-setInterval(changeSlide, 10000);
+move_slide(start_pos)
 
+//const inputs = document.querySelectorAll('.inputs input');
+//const imgs = document.querySelectorAll('.slides img');
+//let curr_img = 0;
+//
+//console.log(inputs.length);
+//
+//function pass_slides() {
+//  console.log('trying pass automatly')
+//  inputs[curr_img].checked = true;
+//  imgs.style.transform = 'translateX(-${curr_img * 100}%)';
+//}
+//
+//
+//inputs.forEach((input, index) => {
+//
+//
+//  input.addEventListener('change', () => {
+//    console.log('trying to pass manual');
+//    curr_img = index;
+//    const imagesContainer = document.querySelectorAll('.slides');
+//    //console.log(imagesContainer[curr_img].src)
+//    imagesContainer.style.transform = 'translateX(-${curr_img * 100}%)';
+//  });
+//});
+//
+//
+//
+//setInterval(move_slide, 1000);
+//
+
+//const inputs = document.querySelectorAll('.inputs input');
+//const imgs = document.querySelectorAll('.slides img');
+//let curr_img = 0;
+//
+//console.log('start script');
+//
+//function pass_slides() {
+//  console.log('trying pass automatly')
+//  inputs[curr_img].checked = true;
+//  imgs.style.transform = 'translateX(-${curr_img * 100}%)';
+//}
+//
+//inputs.forEach((input, index) => {
+//  console.log('trying to pass manual');
+//
+//  input.addEventListener('pass', () => {
+//
+//    curr_img = index;
+//    imgs.style.transform = 'translateX(-${curr_img * 100}%)';
+//  });
+//});
+//
+//setInterval(pass_slides, 1000);
+//
+//
+//
+//const inputs = document.querySelectorAll('.inputs input');
+//let currentIndex = 0;
+//const totalSlides = inputs.length;
+//
+//function changeSlide() {
+//  currentIndex = (currentIndex + 1) % totalSlides;
+//  inputs[currentIndex].checked = true;
+//
+//  const imagesContainer = document.querySelector('.imgs');
+//  imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+//}
+//
+//inputs.forEach((input, index) => {
+//  input.addEventListener('change', () => {
+//    currentIndex = index;
+//    const imagesContainer = document.querySelector('.imgs');
+//    imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+//  });
+//});
+//
+//setInterval(changeSlide, 10000);
+
+//const inputs = document.querySelectorAll()
+
+//inputs.forEach((input, index) => {
+//  input.addEventListener('change', () => {
+//    currentIndex = index + 1; // Ajusta o índice, já que o primeiro slide agora é um clone
+//    imagesContainer.style.transition = 'transform 0.5s ease-in-out';
+//    imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+//  });
+//});
+//const inputs = document.querySelectorAll('.inputs input');
+//let currentIndex = 0;
+//const totalSlides = inputs.length;
+//
+//function changeSlide() {
+//  currentIndex = (currentIndex + 1) % totalSlides;
+//  inputs[currentIndex].checked = true;
+//
+//  const imagesContainer = document.querySelector('.imgs');
+//  imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+//}
+//
+//inputs.forEach((input, index) => {
+//  input.addEventListener('change', () => {
+//    currentIndex = index;
+//    const imagesContainer = document.querySelector('.imgs');
+//    imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+//  });
+//});
+//
+//setInterval(changeSlide, 10000);
+//
 
 //
 //const inputs = document.querySelectorAll('.inputs input');
@@ -65,13 +183,6 @@ setInterval(changeSlide, 10000);
 //}
 //
 //// Evento para quando um botão for clicado manualmente
-//inputs.forEach((input, index) => {
-//  input.addEventListener('change', () => {
-//    currentIndex = index + 1; // Ajusta o índice, já que o primeiro slide agora é um clone
-//    imagesContainer.style.transition = 'transform 0.5s ease-in-out';
-//    imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-//  });
-//});
 //
 //// Muda o slide automaticamente a cada 10 segundos
 //setInterval(changeSlide, 10000);
