@@ -13,13 +13,12 @@ function move_slide(position) {
     else {
       //new position = start position - (current image index * 100)
       img.style.transform = `translateX(${start_pos - (curr_img * 100)}%)`;
-      console.log("aaaaa")
     }
     console.log(position);
   })
 }
 
-// pass by inputs
+// pass by inputs (manual)
 inputs.forEach((input, index) => {
   input.addEventListener('change', () => {
     curr_img = index;
