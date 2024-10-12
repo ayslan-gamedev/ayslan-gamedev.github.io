@@ -1,4 +1,77 @@
-const inputs = document.querySelectorAll('.carousel .inputs input');
+//  test
+let images = [
+  ["images/test03.png", "title 1", "aaa"],
+  ["images/test02.png", "tile2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at ante pulvinar, nec suscipit urna. Ut rhoncus ex id dolor gravida ultrices. Nulla facilisi. Nunc semper id tortor vel molestie. Mauris mi eros, faucibus quis tempus in, sollicitudin eget magna. Ut ornare vitae felis et rhoncus. Fusce fringilla elementum velit. Etiam ac purus tempus, consectetur metus eget, vehicula quam. Nunc a sapien a velit venenatis ultrices sollicitudin et urna. Ut fringilla dapibu."],
+  ["images/test01.png", "title 3", "ccc"],
+  ["images/test01.png", "title 3", "ccc"]
+]
+// ;...
+
+const carousel = document.querySelector('.session_projects .carousel');
+
+const images_container = Object.assign(document.createElement("div"), { className: "images" });
+const inputs_container = Object.assign(document.createElement("div"), { className: "inputs" });
+carousel.append(images_container)
+carousel.append(inputs_container)
+
+function create_carousel(items) {
+  for (let i = 0; i < items.length; i++) {
+
+    let _container = Object.assign(document.createElement("div"), {
+      className: "container"
+    })
+
+    let _image = Object.assign(document.createElement("img"), { src: items[i][0] })
+    images_container.append(_container)
+    _container.append(_image)
+
+    let _text_conteiner = Object.assign(document.createElement("div"), { className: "texts" })
+
+    let _title = document.createElement("h1")
+    let _descrision = document.createElement("p")
+    let _button = document.createElement("button")
+    //_button.type = "button";
+
+    _container.append(_text_conteiner);
+    _text_conteiner.append(_title)
+    _text_conteiner.append(_descrision)
+    _text_conteiner.append(_button)
+
+    _title.append(items[i][1]);
+    _descrision.append(items[i][2])
+    _button.append("click in me")
+    let _input = Object.assign(document.createElement("input"), {
+      type: "radio",
+      id: `slide${i}`,
+      name: "slides"
+    })
+
+    _input.checked = i == 0;
+
+    inputs_container.append(_input)
+  }
+}
+
+create_carousel(images);
+
+
+//const carousel = document.querySelector('.session_projects .carousel');
+//
+//const carosel_images = carousel.append(document.createElement("div"), { className: "images" });
+//
+////console.log(carousel.className)
+//let images = ["images/test01.png", "images/test02.png", "images/test03.png"]
+//
+//for (let i = 0; i < images.length; i++) {
+//  //carousel.append(Object.assign(document.createElement("img"), { src: images[i] }));
+//  //carousel.append(Object.assign(document.createElement("input"), { type: "radio" }));
+//}
+//
+//
+
+
+
+/*const inputs = document.querySelectorAll('.carousel .inputs input');
 const imgs = document.querySelectorAll('.carousel .slides img');
 let curr_img = 0;
 
@@ -27,7 +100,7 @@ inputs.forEach((input, index) => {
 });
 
 move_slide(start_pos)
-
+*/
 //const inputs = document.querySelectorAll('.inputs input');
 //const imgs = document.querySelectorAll('.slides img');
 //let curr_img = 0;

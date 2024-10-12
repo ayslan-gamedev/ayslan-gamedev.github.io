@@ -2,24 +2,24 @@
 
 :root {
   --primary-color: #ffffff;
-  --secundary-color: #ffffff;
+  --secondary-color: #ffffff;
   --background-color: white;
-  /*--background-color: #353535;*/
-
-  --test-color: white;
+  --text-color: white;
 }
 
 * {
   margin: 0;
-  outline: 0;
-  border: 0;
   padding: 0;
+  outline: none;
+  border: none;
 }
 
 html,
 body {
   overflow-x: hidden;
   font-size: 16px;
+  background-color: var(--background-color);
+  font-family: "JetBrains Mono", monospace;
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -33,11 +33,10 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  font-family: "JetBrains Mono", monospace;
   align-items: center;
 }
 
+/* Sessões */
 .session_home,
 .session_about,
 .session_contact {
@@ -57,73 +56,66 @@ body {
 }
 
 .session_projects {
-  height: 100vh;
+  height: 140vh;
 
   .carousel {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+    flex-direction: column;
 
-  .slides {
-    display: flex;
-    justify-content: center;
-  }
+    align-content: center;
 
-  .slides img {
-    width: 80vw;
-    height: 90vh;
-    object-fit: cover;
-    /*transform: translateX(200%);*/
-    transition: .2s;
-  }
+    .images {
+      display: flex;
+      position: relative;
 
-  .inputs {
-    position: absolute;
-    transform: translateY(-45px);
-  }
+      /*transform: translateX(50%);*/
+      .container {
+        height: 100vh;
+        position: relative;
+        display: flex;
 
-  .inputs input[type="radio"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-color: transparent;
-    transition: .3s;
-    cursor: pointer;
-    margin-left: 2vw;
-  }
+        img {
 
-  .inputs input[type="radio"]:checked {
-    background-color: black;
-    border-color: black;
-    transition: .2s;
-  }
+          height: 100vh;
+          width: 80vw;
+          object-fit: cover;
 
-  @media (max-width: 768px) {
-    .slides img {
-      width: 100vw;
+          @media (max-width: 768px) {
+            width: 100vw;
+          }
+        }
+
+        .texts {
+          position: absolute;
+          width: 90%;
+          height: 100%;
+
+          h1 {}
+
+          p {}
+
+          button {}
+        }
+      }
     }
+
+    .inputs {}
   }
+
 }
 
-.session_about,
-.session_contact {
-  text-align: center;
-}
-
+/* Sessão "Sobre" */
 .session_about {
   display: flex;
   flex-direction: row;
   gap: 3vw;
+  text-align: center;
 
   .bio {
     display: flex;
     flex-direction: column;
     gap: 25px;
     text-align: left;
-
   }
 
   img {
@@ -140,36 +132,32 @@ body {
       order: 2;
       width: 100%;
       height: 65%;
-      object-fit: cover;
     }
 
     .bio {
       order: 1;
 
-      h2 {
+      h2,
+      p {
         text-align: center;
       }
 
       p {
-        text-align: center;
-        padding-left: 2vw;
-        padding-right: 2vw;
-        padding-bottom: 4vh;
+        padding: 0 2vw 4vh;
       }
     }
   }
 }
 
+/* Sessão "Contato" */
 .session_contact {
-  p {
-    padding-left: 20vw;
-    padding-right: 20vw;
-  }
+  text-align: center;
 
-  @media (max-width: 768px) {
-    p {
-      padding-left: 0;
-      padding-right: 0;
+  p {
+    padding: 0 20vw;
+
+    @media (max-width: 768px) {
+      padding: 0;
     }
   }
 }
