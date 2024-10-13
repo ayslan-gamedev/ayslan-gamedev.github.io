@@ -61,21 +61,24 @@ body {
   .carousel {
     display: flex;
     flex-direction: column;
-
     align-content: center;
+    align-items: center;
 
     .images {
       display: flex;
       position: relative;
 
-      /*transform: translateX(50%);*/
+
       .container {
         height: 100vh;
         position: relative;
         display: flex;
 
-        img {
+        /*transform: translateX(50%);*/
 
+        transition: .3s;
+
+        img {
           height: 100vh;
           width: 80vw;
           object-fit: cover;
