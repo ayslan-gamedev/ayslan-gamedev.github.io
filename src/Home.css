@@ -1,0 +1,36 @@
+.Home {
+  height: 80vh;
+  margin: 25px 25px 0;
+  padding: 30px 30px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hello{
+  padding-top: 15vh;
+  font: 1em sans-serif;
+  color: #333;
+  
+  h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+}
+
+.footer{
+  font: 1em sans-serif;
+  color: #333;
+  text-align: center;
+  margin-top: auto;
+  padding: 20px;
+}
